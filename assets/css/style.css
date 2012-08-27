@@ -1,0 +1,271 @@
+@charset "utf-8";
+
+
+#container {
+    height: auto !important;
+    margin: 0 auto;
+    min-height: 100%;
+    width: 100%;
+}
+
+
+
+.logout
+{
+    float: right;
+    width: 200px;
+    margin-right: 10px;
+       margin-top: 10px;
+}
+
+body {
+    background: url("../images/bg_header.jpg") repeat-x scroll center top #232323 ;
+}
+
+html,body{
+    color: #D8ECFF;
+    font-family: arial,sans-serif;
+    font-size: 14px;
+    height: auto !important;
+    margin: 0;
+    min-height: 100%;
+    padding: 0;
+}
+
+#header
+{
+    height:131px;
+    width: 963px;
+    margin-left: auto;
+    margin-right: auto;
+    background: center url("../images/header.jpg");
+}
+
+#header .content {
+    height: 110px;
+}
+
+.content {
+    height: auto;
+    margin: 0 auto;
+    padding-left: 0;
+    width: 1000px;
+}
+
+#menu_row {
+    background: url("../images/menu-bg.gif") repeat-x scroll center top transparent;
+    float: left;
+    font-family: Arial,Helvetica,sans-serif;
+    height: 49px;
+    position: relative;
+    width: 100%;
+    z-index: 2;
+}
+
+#leftMain
+{
+    float:left;
+    width:200px;
+
+}
+
+#rightMain
+{
+    float:right;
+    width:790px;
+}
+
+#main {
+    background: url("../images/content-bg.jpg") repeat-x scroll center top transparent;
+    clear: left;
+    float: left;
+    height: auto;
+    width: 100%;
+}
+
+#footer {
+    background: url("../images/footer-bg.jpg") repeat-x scroll center top transparent;
+    clear: both;
+    height: 52px;
+    width: 100%;
+}
+#detailViewContainer {
+    margin-top: 61px;
+}
+
+
+
+h1, h2, h3, h4, h5 {
+    color: #585858;
+    font-weight: bold;
+}
+h1 {
+    color: #262626;
+    font-size: 36px;
+    margin: 0;
+    padding: 0;
+}
+h2 {
+    font-size: 28px;
+}
+h3 {
+    font-size: 20px;
+}
+h4 {
+    font-size: 18px;
+}
+h5 {
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+}
+form, input, ul, li, p {
+    margin: 0;
+    padding: 0;
+}
+input {
+    background: none repeat scroll 0 0 transparent;
+    border: medium none;
+}
+ul, li {
+    list-style: none outside none;
+}
+p {
+    color: #373737;
+    font-size: 12px;
+    padding: 5px 0;
+}
+a {
+    color: #268AB9;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+.content-box
+{
+    background: url("../images/content-bottom-bg.jpg") no-repeat scroll center bottom #F3F3F3;
+    border: 1px solid #AAAAAA;
+    float: left;
+
+}
+
+.but
+{
+    position:relative;
+    margin-buttom:-60px;
+    width:100px;
+    background:#fff;
+    border: 1px solid #ccc;
+    padding:10px 20px;
+    -webkit-border-radius:5px;
+    -moz-border-radius:10px;
+}
+
+
+#rightMain .content-box
+{
+    width:100%;
+    margin-top:20px;
+}
+
+#leftMain .content-box
+{
+        width:100%;
+    margin-top:20px;
+}
+
+#leftMain .content-box li
+{
+    border-bottom: 1px solid #90BADE;
+    list-style: none outside none;
+    margin: 0;
+
+}
+
+#rightMain .content-box .content-inner
+{
+    background: url("../images/content-top-bg.jpg") no-repeat scroll center top transparent;
+    border: 1px solid #AAAAAA;
+    float: left;
+    padding: 15px 20px;
+    width: 750px;
+}
+
+#rightMain  #detailItem  .dash-sub-menu
+{
+        margin-right: 29px; /* detail for detail views only */
+}
+
+#leftMain .content-box ul
+{
+    border: medium none;
+    margin: 0;
+    padding: 0;
+    color:#0894a5;
+    line-height: 30px;
+    list-style-position: outside;
+    list-style-image: none;
+    list-style-type: none;
+}
+
+
+
+#BrainTeaser #rightMain #Tools
+{
+    width:600px;
+    height:60px;
+    margin-top:20px;
+}
+
+#BrainTeaser #rightMain #QuestionLists
+{
+
+}
+
+
+#BrainTeaser #Tools #group
+{
+    margin-top:23px;
+    margin-left:20px;
+}
+
+#BrainTeaser #QuestionLists .content-inner
+{
+    background: url("../images/content-top-bg.jpg") no-repeat scroll center top transparent;
+    border: 1px solid #AAAAAA;
+    float: left;
+    padding: 15px 20px;
+    width: 750px;
+}
+
+#BrainTeaser #leftMain #QuizList
+{
+    width:100%;
+    margin-top:20px;
+}
+
+
+.LecturesPage #Files
+{
+    width: 85%;
+    padding: 10px;
+
+}
+
+.LecturesPage #Files .content
+{
+
+}
+
+.LecturesPage #Preview .content
+{
+
+}
+.LecturesPage #Preview
+{
+    width: 95%;
+    padding: 10px;
+
+}

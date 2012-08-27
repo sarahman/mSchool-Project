@@ -1,0 +1,111 @@
+/* Ajax Forms*/
+
+#navform p, label, legend { font: 15px "Lucida Grande", "Lucida Sans Unicode", Arial, sans-serif; }
+
+#navform h1 { margin: 10px 0 10px; font-size: 24px; color: #333333; }
+#navform .ans {
+    display: inline-block;
+    font: 1.8em "Lucida Grande", "Lucida Sans Unicode", Arial, sans-serif;
+    margin-left: -125px;
+}
+
+#navform hr { color: inherit; height: 0; margin: 6px 0 6px 0; padding: 0; border: 1px solid #d9d9d9; border-style: none none solid; }
+
+#navform { display: block; width: 650px; margin: 20px auto; padding: 20px; border: 1px solid #cbcbcb; background-color: #FFF; -webkit-border-radius:5px; color: #666;}
+
+/* Form style */
+
+#navform label { display: inline-block; float: left; height: 26px; line-height: 26px; width: 155px; font-size: 15px; -webkit-border-radius:5px; }
+#thankyou {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 36px;
+    text-align: center;
+    font-style: italic;
+}
+#navform input[type="radio"]
+{
+         width: 50px;
+
+}
+#navform input, textarea, select { width: 280px; margin: 0; padding: 5px; color: #666; background: #f5f5f5; border: 1px solid #ccc; margin: 5px 0; font:15px "Lucida Grande", "Lucida Sans Unicode", Arial, sans-serif; webkit-border-radius:5px; }   
+#navform .dataField{ width: 500px; margin: 0; padding: 5px; color: #666;margin: 5px 0; font:15px "Lucida Grande", "Lucida Sans Unicode", Arial, sans-serif;}
+#navform input:focus, textarea:focus, select:focus { border: 1px solid #999; background-color: #fff; color:#333; }
+#navform input.submit { width: 85px; cursor: pointer; border: 1px solid #222; background:#333; color:#fff; }
+#navform input.submit:hover { background:#444; }
+#navform input[type="submit"][disabled] { background:#888; }
+#navform fieldset { padding:20px; border:1px solid #eee; -webkit-border-radius:5px; -moz-border-radius:5px; }
+#navform legend { padding:7px 10px; font-weight:bold; color:#000; border:1px solid #eee; -webkit-border-radius:5px; -moz-border-radius:5px; margin-bottom:0 !important; margin-bottom:20px; }
+#navform span.required{ font-size: 13px; color: #ff0000; } /* Select the colour of the * if the field is required. */
+#message { margin: 10px 0; padding: 0; }
+.error_message {
+    display: block;
+    height: 22px;
+    line-height: 22px;
+    background: #FBE3E4 url('../images/error.gif') no-repeat 10px center;
+    padding: 3px 10px 3px 35px;
+    color:#8a1f11;
+    border: 1px solid #FBC2C4;
+    -webkit-border-radius:5px;
+    font-size: 28px;
+}
+.loader { padding: 0 10px; }
+#navform #success_page h1 { background: url('../images/success.gif') left no-repeat; padding-left:22px; }
+acronym { border-bottom:1px dotted #ccc; }
+
+
+
+/* Static Forms*/
+
+
+.navform p, label, legend { font: 15px "Lucida Grande", "Lucida Sans Unicode", Arial, sans-serif; }
+
+.navform h1 { margin: 10px 0 10px; font-size: 24px; color: #333333; }
+.navform .ans {
+    display: inline-block;
+    font: 1.8em "Lucida Grande", "Lucida Sans Unicode", Arial, sans-serif;
+    margin-left: -125px;
+}
+
+.navform hr { color: inherit; height: 0; margin: 6px 0 6px 0; padding: 0; border: 1px solid #d9d9d9; border-style: none none solid; }
+
+.navform { display: block; width: 650px; margin: 20px auto; padding: 20px; border: 1px solid #cbcbcb; background-color: #FFF; -webkit-border-radius:5px; color: #666;}
+
+/* Form style */
+
+.navform label { display: inline-block; float: left; height: 26px; line-height: 26px; width: 155px; font-size: 15px; -webkit-border-radius:5px; }
+#thankyou {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 36px;
+    text-align: center;
+    font-style: italic;
+}
+
+.navform input[type="radio"]
+{
+     width: 100px;
+
+}
+.navform input, textarea, select { width: 280px; margin: 0; padding: 5px; color: #666; background: #f5f5f5; border: 1px solid #ccc; margin: 5px 0; font:15px "Lucida Grande", "Lucida Sans Unicode", Arial, sans-serif; webkit-border-radius:5px; }   
+.navform .dataField{ width: 500px; margin: 0; padding: 5px; color: #666;margin: 5px 0; font:15px "Lucida Grande", "Lucida Sans Unicode", Arial, sans-serif;}
+.navform input:focus, textarea:focus, select:focus { border: 1px solid #999; background-color: #fff; color:#333; }
+.navform input.submit { width: 85px; cursor: pointer; border: 1px solid #222; background:#333; color:#fff; }
+.navform input.submit:hover { background:#444; }
+.navform input[type="submit"][disabled] { background:#888; }
+.navform fieldset { padding:20px; border:1px solid #eee; -webkit-border-radius:5px; -moz-border-radius:5px; }
+.navform legend { padding:7px 10px; font-weight:bold; color:#000; border:1px solid #eee; -webkit-border-radius:5px; -moz-border-radius:5px; margin-bottom:0 !important; margin-bottom:20px; }
+.navform span.required{ font-size: 13px; color: #ff0000; } /* Select the colour of the * if the field is required. */
+#message { margin: 10px 0; padding: 0; }
+.error_message {
+    display: block;
+    height: 22px;
+    line-height: 22px;
+    background: #FBE3E4 url('../images/error.gif') no-repeat 10px center;
+    padding: 3px 10px 3px 35px;
+    color:#8a1f11;
+    border: 1px solid #FBC2C4;
+    -webkit-border-radius:5px;
+    font-size: 28px;
+}
+.loader { padding: 0 10px; }
+.navform #success_page h1 { background: url('../images/success.gif') left no-repeat; padding-left:22px; }
+acronym { border-bottom:1px dotted #ccc; }
