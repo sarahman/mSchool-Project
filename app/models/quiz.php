@@ -13,6 +13,11 @@ class Quiz extends My_Model
         return $this->findAll();
     }
 
+    public function save(array $data)
+    {
+        return $this->insert($data);
+    }
+
     public function delete(array $quizId)
     {
         return $this->remove($quizId);

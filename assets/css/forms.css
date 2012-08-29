@@ -37,8 +37,8 @@
 #navform legend { padding:7px 10px; font-weight:bold; color:#000; border:1px solid #eee; -webkit-border-radius:5px; -moz-border-radius:5px; margin-bottom:0 !important; margin-bottom:20px; }
 #navform span.required{ font-size: 13px; color: #ff0000; } /* Select the colour of the * if the field is required. */
 #navform span.note.error{ display: block; color: #ff0000; padding-left: 155px }
-#navform div#form-buttons { padding: 30px 50px }
-#navform div#form-buttons input { margin: 5px 5px 0 105px; }
+#navform div.form-buttons { padding: 30px 50px }
+#navform div.form-buttons input { margin: 5px 5px 0 105px; }
 #message { margin: 10px 0; padding: 0; }
 .error_message {
     display: block;

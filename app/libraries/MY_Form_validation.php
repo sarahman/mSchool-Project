@@ -26,6 +26,44 @@ class MY_Form_validation extends CI_Form_validation
         $this->set_rules($config);
     }
 
+    public function setRulesForQuizAdd()
+    {
+        $config = array(
+            array(
+                'field' => 'Title',
+                'label' => 'Title',
+                'rules' => 'required'
+            ),
+            array(
+                'field' => 'Description',
+                'label' => 'Description',
+                'rules' => 'required'
+            ),
+            array(
+                'field' => 'ExpiryDate',
+                'label' => 'Expiry Date',
+                'rules' => 'required'
+            ),
+            array(
+                'field' => 'ExpiryTime',
+                'label' => 'Expiry Time',
+                'rules' => 'required'
+            ),
+            array(
+                'field' => 'LecturerID',
+                'label' => 'Lecturer ID',
+                'rules' => 'required'
+            ),
+            array(
+                'field' => 'CategoryID',
+                'label' => 'Category ID',
+                'rules' => 'required'
+            )
+        );
+
+        $this->set_rules($config);
+    }
+
     public function setRulesForQuestionUpdate()
     {
         $config = array(

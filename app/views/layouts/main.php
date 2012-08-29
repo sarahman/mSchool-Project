@@ -12,30 +12,6 @@
         <link href="<?php echo site_url('assets/css/forms.css') ?>" rel="stylesheet" type="text/css" />
 
         <script src="<?php echo site_url('assets/js/jquery-1.4.2.min.js') ?>" type="text/javascript"></script>
-        <script src="<?php echo site_url('assets/js/superfish.js') ?>" type="text/javascript"></script>
-        <script src="<?php echo site_url('assets/js/hoverIntent.js') ?>" type="text/javascript"></script>
-        <script src="<?php echo site_url('assets/js/facebox.js') ?>" type="text/javascript"></script>
-        <script type="text/javascript" src="<?php echo site_url('assets/js/navform.js') ?>"></script>
-        <script language="javascript" type="text/javascript">
-            (function ($) {
-                callFacebox($);
-                $('ul.sf-menu').superfish({
-                    delay: 0, // one second delay on mouseout
-                    animation: {opacity:'show',height:'show'}, // fade-in and slide-down animation
-                    speed: 45, // faster animation speed
-                    autoArrows: false, // disable generation of arrow mark-up
-                    dropShadows: true // disable drop shadows
-                });
-            })(jQuery);
-
-            function callFacebox($) {
-                $('a[rel*=facebox]').facebox({
-                    loadingImage:'assets/images/loading.gif',
-                    closeImage:'assets/images/closelabel.png'
-                });
-            }
-        </script>
-
     </head>
 
     <body>
@@ -68,6 +44,30 @@
 
             <div id="footer"> </div>
         </div>
+
+        <script src="<?php echo site_url('assets/js/superfish.js') ?>" type="text/javascript"></script>
+        <script src="<?php echo site_url('assets/js/hoverIntent.js') ?>" type="text/javascript"></script>
+        <script src="<?php echo site_url('assets/js/facebox.js') ?>" type="text/javascript"></script>
+        <script src="<?php echo site_url('assets/js/navform.js') ?> "type="text/javascript"></script>
+        <script language="javascript" type="text/javascript">
+            (function ($) {
+                callFacebox($);
+                $('ul.sf-menu').superfish({
+                    delay: 0, // one second delay on mouseout
+                    animation: {opacity:'show',height:'show'}, // fade-in and slide-down animation
+                    speed: 45, // faster animation speed
+                    autoArrows: false, // disable generation of arrow mark-up
+                    dropShadows: true // disable drop shadows
+                });
+            })(jQuery);
+
+            function callFacebox($) {
+                $('a[rel*=facebox]').facebox({
+                    loadingImage:'assets/images/loading.gif',
+                    closeImage:'assets/images/closelabel.png'
+                });
+            }
+        </script>
 
     </body>
 

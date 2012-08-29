@@ -43,7 +43,7 @@
                 <label for='QuizID'><span class='required'>*</span>QuizID</label>
                 <input name='QuizID' type='text' id='QuizID' size='30' value='<?php echo $question['QuizID'] ?>' />
 
-                <div id='form-buttons'>
+                <div class='form-buttons'>
                     <input type='button' class='submit' id='pop-out' value='OK' />
                     <input type='button' class='submit' id='edit-button' value='Edit'
                            rel='<?php echo $question['QuesID'] ?>' />

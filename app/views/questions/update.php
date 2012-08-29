@@ -68,7 +68,7 @@ EOF;
                 <input name='QuizID' type='text' id='QuizID' size='30' value='<?php echo $question['QuizID'] ?>' />
                 <span class='note error'><?php echo form_error('QuizID') ?></span>
 
-                <div id='form-buttons'>
+                <div class='form-buttons'>
                     <input type='submit' class='submit' id='submit' value='Update' />
                     <input type='button' class='submit' id='pop-out' value='Cancel' />
                 </div>

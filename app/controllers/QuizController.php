@@ -23,19 +23,29 @@ class QuizController extends BaseController
 
     public function add()
     {
-        if ($_POST) {
-            extract($_POST);
-            $quiz = new Quiz();
-            $quiz->Title = $Title;
-            $quiz->Description = $Description;
-            $quiz->ExpiryDate = to_datetime(strtotime($ExpiryDate));
-            $quiz->ExpiryTime = to_datetime(strtotime($ExpiryTime));
-            $quiz->LecturerID = $LecturerID;
-            $quiz->CategoryID = $CategoryID;
-            $quiz->create();
-            echo "Record Added";
-            exit;
+        $this->load->library('form_validation');
+        $this->form_validation->setRulesForQuizAdd();
+
+        if (!empty($_POST)) {
+            if ($this->form_validation->run()) {
+
+                $this->load->model('quiz');
+                $result = $this->quiz->save($_POST);
+
+                if (empty($result)) {
+                    $this->data['isAdded'] = false;
+                    $this->data['errorMsg'] = 'Something went wrong! Please check again.';
+                } else {
+                    $this->data['isAdded'] = true;
+                }
+
+            } else {
+                $this->data['isAdded'] = false;
+                $this->data['errorMsg'] = 'Check the following errors.';
+            }
         }
+
+        $this->load->view('quiz/add', $this->data);
     }
 
     public function confirmDelete()
