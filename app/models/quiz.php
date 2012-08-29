@@ -2,8 +2,11 @@
 
 class Quiz extends My_Model
 {
-    protected $tableName = 'tblquiz';
-    protected $primaryKey = 'QuizID';
+    public function __construct()
+    {
+        parent::__construct();
+        $this->loadTable('tblquiz', 'QuizID');
+    }
 
     public function getAll()
     {

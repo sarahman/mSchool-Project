@@ -27,7 +27,7 @@ foreach ($questions as $items) {
         <td class='status'>{$items['AnsC']}</td>
         <td class='move'>{$items['AnsD']}</td>
         <td class='quickaction'><ul>
-            <li><a class='view' href="javascript:delQues({$items['QuesID']})"><span><span>View</span></span></a></li>
+            <li><a class='view' href="javascript:viewQuestion({$items['QuesID']})"><span><span>View</span></span></a></li>
             <li><a class='edit' href="javascript:updateQues({$items['QuesID']})"><span><span>Edit</span></span></a></li>
             <li><a class='delete' href="javascript:delQues({$items['QuesID']})"><span><span>Delete</span></span></a></li>
         </ul></td>

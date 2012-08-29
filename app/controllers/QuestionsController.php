@@ -25,6 +25,62 @@ class QuestionsController extends BaseController
         $this->load->view('questions/get-by-quiz', $this->data);
     }
 
+    public function view()
+    {
+        $data = $this->uri->uri_to_assoc();
+
+        if (empty ($data['id'])) {
+            return;
+        }
+
+        $this->load->model('question');
+        $this->data['question'] = $this->question->getDetail($data['id']);
+        $this->load->view('questions/view', $this->data);
+    }
+
+    public function update()
+    {
+        $this->load->model('question');
+
+        $this->load->library('form_validation');
+        $this->form_validation->setRulesForQuestionUpdate();
+
+        if (!empty ($_POST)) {
+
+            if ($this->form_validation->run()) {
+
+                $result = $this->question->modify($_POST);
+
+                if (empty($result)) {
+
+                    $this->data['isUpdated'] = false;
+                    $this->data['errorMsg'] = 'Something went wrong! Please check again.';
+                    $this->data['question'] = $_POST;
+
+                } else {
+                    $this->data['isUpdated'] = true;
+                }
+
+            } else {
+                $this->data['isUpdated'] = false;
+                $this->data['errorMsg'] = 'Check the following errors.';
+                $this->data['question'] = $_POST;
+            }
+        } else {
+            $data = $this->uri->uri_to_assoc();
+
+            if (empty ($data['id'])) {
+                $this->data['errorMsg'] = 'Check the following errors.';
+            } else {
+                $this->data['question'] = $this->question->getDetail($data['id']);
+            }
+
+            $this->data['isUpdated'] = false;
+        }
+
+        $this->load->view('questions/update', $this->data);
+    }
+
     public function confirmDelete()
     {
         $quesID = $this->uri->segment(3);

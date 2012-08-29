@@ -186,8 +186,6 @@
     }
 
     function delRec() {
-        alert($('#QuizIDVal').val());
-        return;
         $('#facebox .content').load('Ajax/QuizAdd.php?q=del&quizID=' + $('#QuizIDVal').val(), function () {
             updateQuiz();
             updateQuestions($('#QuizIDVal').val());
@@ -205,15 +203,19 @@
         });
     }
 
+    function viewQuestion($id) {
+        jQuery.facebox({ ajax:'questions/view/id/' + $id});
+    }
+
     function updateQues($id) {
-        jQuery.facebox({ ajax:'Ajax/QuestionsUpdate.php?QuesID=' + $id});
+        jQuery.facebox({ ajax:'questions/update/id/' + $id});
     }
 
     function updateQuizData() {
         jQuery.facebox({ ajax:'Ajax/QuizUpdate.php?QuizID=' + $('#QuizIDVal').val()});
     }
 
-    function refreshall() {
+    function refreshAll() {
         updateQuiz();
         updateQuestions($('#QuizIDVal').val());
     }

@@ -2,8 +2,11 @@
 
 class User extends My_Model
 {
-    protected $tableName = 'tbllecturer';
-    protected $primaryKey = 'LectID';
+    public function __construct()
+    {
+        parent::__construct();
+        $this->loadTable('tbllecturer', 'LectID');
+    }
 
     public function validateUser($data)
     {

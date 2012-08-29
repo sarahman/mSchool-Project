@@ -26,6 +26,54 @@ class MY_Form_validation extends CI_Form_validation
         $this->set_rules($config);
     }
 
+    public function setRulesForQuestionUpdate()
+    {
+        $config = array(
+            array(
+                'field' => 'QuesID',
+                'label' => 'Ques ID',
+                'rules' => 'required'
+            ),
+            array(
+                'field' => 'Question',
+                'label' => 'Question',
+                'rules' => 'required'
+            ),
+            array(
+                'field' => 'AnsA',
+                'label' => 'Answer A',
+                'rules' => 'required'
+            ),
+            array(
+                'field' => 'AnsB',
+                'label' => 'Answer B',
+                'rules' => 'required'
+            ),
+            array(
+                'field' => 'AnsC',
+                'label' => 'Answer C',
+                'rules' => 'required'
+            ),
+            array(
+                'field' => 'AnsD',
+                'label' => 'Answer D',
+                'rules' => 'required'
+            ),
+            array(
+                'field' => 'CorrAns',
+                'label' => 'Correct Answer',
+                'rules' => 'required'
+            ),
+            array(
+                'field' => 'QuizID',
+                'label' => 'Quiz ID',
+                'rules' => 'required'
+            )
+        );
+
+        $this->set_rules($config);
+    }
+
 
     /* *********************** IMPORTANT *************************
     * This method is overridden to implement the callback methods
