@@ -193,11 +193,11 @@
     }
 
     function delQues($id) {
-        jQuery.facebox({ ajax:'Ajax/QuestionsAdd.php?q=delete&quesID=' + $id});
+        jQuery.facebox({ ajax:'questions/confirmDelete/id/' + $id});
     }
 
     function delQuestion($id) {
-        $('#facebox .content').load('Ajax/QuestionsAdd.php?q=del&quesID=' + $id, function () {
+        $('#facebox .content').load('questions/delete/id/' + $id, function () {
             updateQuiz();
             updateQuestions($('#QuizIDVal').val());
         });

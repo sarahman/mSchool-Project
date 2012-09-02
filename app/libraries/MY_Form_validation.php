@@ -129,7 +129,7 @@ class MY_Form_validation extends CI_Form_validation
             )
         );
 
-        $this->set_rules($config);
+        $this->setRulesForQuestionAdd($config);
     }
 
 

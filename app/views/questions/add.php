@@ -14,64 +14,57 @@ EOF;
     <link href='<?php echo site_url('assets/css/jquery-ui-1.8.7.custom.css') ?>' rel='stylesheet' type='text/css' />
     <div id="navform">
 
-        <h1><acronym>New Questions</acronym></h1>
+        <h1><acronym>New Question</acronym></h1>
 
         <p></p>
 
         <div id="message"></div>
 
-        <form method="post" action="<?php echo site_url('quiz/add') ?>" name="contactform" id="DataForm">
+        <form method="post" action="<?php echo site_url('questions/add') ?>" name="contactform" id="DataForm">
 
     <?php else : echo 'F'; ?>
     <?php endif ?>
             <fieldset>
 
-                <legend>Please fill in the details about the questions:</legend>
+                <legend>Please fill in the details about the question:</legend>
 
                 <label for='Question'><span class='required'>*</span>Question</label>
-                <textarea name='Question' type='text' id='Question'
-                          cols="" rows=""><?php echo set_value('Question') ?></textarea>
+                <textarea name='Question' id='Question' cols="" rows=""><?php echo set_value('Question') ?></textarea>
                 <span class='note error'><?php echo form_error('Question') ?></span>
 
                 <label for='AnsA'><span class='required'>*</span>AnsA</label>
-                <textarea name='AnsA' type='text' id='AnsA'
-                          cols="" rows=""><?php echo set_value('AnsA') ?></textarea>
+                <textarea name='AnsA' id='AnsA' cols="" rows=""><?php echo set_value('AnsA') ?></textarea>
                 <span class='note error'><?php echo form_error('AnsA') ?></span>
 
                 <label for='AnsB'><span class='required'>*</span>AnsB</label>
-                <textarea name='AnsB' type='text' id='AnsB'
-                          cols="" rows=""><?php echo set_value('AnsB') ?></textarea>
+                <textarea name='AnsB' id='AnsB' cols="" rows=""><?php echo set_value('AnsB') ?></textarea>
                 <span class='note error'><?php echo form_error('AnsB') ?></span>
 
                 <label for='AnsC'><span class='required'>*</span>AnsC</label>
-                <textarea name='AnsC' type='text' id='AnsC'
-                          cols="" rows=""><?php echo set_value('AnsC') ?></textarea>
+                <textarea name='AnsC' id='AnsC' cols="" rows=""><?php echo set_value('AnsC') ?></textarea>
                 <span class='note error'><?php echo form_error('AnsC') ?></span>
 
                 <label for='AnsD'><span class='required'>*</span>AnsD</label>
-                <textarea name='AnsD' type='text' id='AnsD'
-                          cols="" rows=""><?php echo set_value('AnsD') ?></textarea>
+                <textarea name='AnsD' id='AnsD' cols="" rows=""><?php echo set_value('AnsD') ?></textarea>
                 <span class='note error'><?php echo form_error('AnsD') ?></span>
 
                 <label for='CorrAns'><span class='required'>*</span>CorrAns</label>
                 <select name="CorrAns" id='CorrAns' size="0">
-                    <option value="1">A</option>
-                    <option value="2">B</option>
-                    <option value="3">C</option>
-                    <option value="4">D</option>
+                    <option value="1" <?php echo set_select('CorrAns', '1') ?>>A</option>
+                    <option value="2" <?php echo set_select('CorrAns', '2') ?>>B</option>
+                    <option value="3" <?php echo set_select('CorrAns', '3') ?>>C</option>
+                    <option value="4" <?php echo set_select('CorrAns', '4') ?>>D</option>
                 </select>
                 <span class='note error'><?php echo form_error('CorrAns') ?></span>
 
                 <label for='Explanation'><span class='required'>*</span>Explanation</label>
-                <textarea name='Explanation' type='text' id='Explanation'
-                          cols="" rows=""><?php echo set_value('Explanation') ?></textarea>
-                <span class='note error'><?php echo form_error('Explanation') ?></span>
+                <textarea name='Explanation' id='Explanation' cols=""
+                          rows=""><?php echo $this->input->post('Explanation') ?></textarea>
 
                 <label for='Image'><span class='required'>*</span>Image</label>
-                <input name='Image' type='text' id='Image' size='30' value='<?php echo set_value('Image') ?>' />
-                <span class='note error'><?php echo form_error('Image') ?></span>
+                <input name='Image' id='Image' value='<?php echo $this->input->post('Image') ?>' />
 
-                <input name='QuizID' type='hidden' id='QuizID' size='30' value='' maxlength=''/>
+                <input name='QuizID' type='hidden' id='QuizID' />
 
                 <div class='form-buttons'>
                     <input type='submit' class='submit' id='submit' value='Add' />
@@ -88,7 +81,6 @@ EOF;
 
     <?php endif;
 } ?>
-
 
 <script type="text/javascript">
     (function ($) {

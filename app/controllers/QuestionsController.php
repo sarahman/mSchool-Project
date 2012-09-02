@@ -46,8 +46,8 @@ class QuestionsController extends BaseController
         if (!empty($_POST)) {
             if ($this->form_validation->run()) {
 
-                $this->load->model('quiz');
-                $result = $this->quiz->save($_POST);
+                $this->load->model('question');
+                $result = $this->question->save($_POST);
 
                 if (empty($result)) {
                     $this->data['isAdded'] = false;
@@ -110,16 +110,27 @@ class QuestionsController extends BaseController
 
     public function confirmDelete()
     {
-        $quesID = $this->uri->segment(3);
+        $data = $this->uri->uri_to_assoc();
+
+        if (empty ($data['id'])) {
+            return;
+        }
+
         echo "<span style='text-align:center'><br><h2>Are you sure to delete this record?</h2><br><br>";
-        echo "<a href='javascript:delQuestion($quesID)' style='padding-left:100px'>Yes</a>   <a href='' style='padding-left:100px'>No</a></span>";
+        echo "<a href='javascript:delQuestion({$data['id']})' style='padding-left:100px'>Yes</a>";
+        echo "<a href='' style='padding-left:100px'>No</a></span>";
     }
 
     public function delete()
     {
+        $data = $this->uri->uri_to_assoc();
+
+        if (empty ($data['id'])) {
+            echo "<h2>Question data has not found. Please check that.</h2>";
+        }
+
         $this->load->model('question');
-        $quesID = $this->uri->segment(3);
-        $this->quiz->delete($quesID);
-        echo "<h2>Deleted Successfully</h2>";
+        $this->question->delete($data['id']);
+        echo "<h2>Deleted Successfully.</h2>";
     }
 }

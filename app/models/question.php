@@ -18,9 +18,19 @@ class Question extends My_Model
         return $this->find(array($this->primaryKey => $questionId));
     }
 
+    public function save(array $data)
+    {
+        return $this->insert($data);
+    }
+
     public function modify(array $data)
     {
         return $this->update($data, $data[$this->primaryKey]);
+    }
+
+    public function delete($questionId)
+    {
+        return $this->remove($questionId);
     }
 
     public function deleteByQuiz($quizId)

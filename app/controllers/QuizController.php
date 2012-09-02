@@ -100,10 +100,9 @@ class QuizController extends BaseController
     public function delete()
     {
         $data = $this->uri->uri_to_assoc();
-echo '<h2>Quiz data is not found. Please check.</h2>';
-        return;
         if (empty ($data['id'])) {
-            echo 'Quiz data is not found. Please check.';
+            echo '<h2>Quiz data is not found. Please check.</h2>';
+
         } else {
             $this->load->model('quiz');
             $this->load->model('question');
