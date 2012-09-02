@@ -26,11 +26,11 @@
                             <li><a href="<?php echo site_url('questions/add') ?>" rel="facebox">
                                 <span><span>Add Question</span></span></a></li>
 
-                            <li><a href="<?php echo site_url('quiz/confirmDelete') ?>"
-                                   rel="facebox"><span><span>Delete Quiz</span></span></a></li>
-
                             <li><a href="javascript:updateQuizData();">
                                 <span><span>Modify Quiz</span></span></a></li>
+
+                            <li><a href="<?php echo site_url('quiz/confirmDelete') ?>"
+                                   rel="facebox"><span><span>Delete Quiz</span></span></a></li>
 
                             <li><a href="#"><span><span>View Scores</span></span></a></li>
                         </ul>
@@ -186,7 +186,7 @@
     }
 
     function delRec() {
-        $('#facebox .content').load('Ajax/QuizAdd.php?q=del&quizID=' + $('#QuizIDVal').val(), function () {
+        $('#facebox .content').load('quiz/delete/id/' + $('#QuizIDVal').val(), function () {
             updateQuiz();
             updateQuestions($('#QuizIDVal').val());
         });
@@ -212,7 +212,7 @@
     }
 
     function updateQuizData() {
-        jQuery.facebox({ ajax:'Ajax/QuizUpdate.php?QuizID=' + $('#QuizIDVal').val()});
+        jQuery.facebox({ ajax:'quiz/update/id/' + $('#QuizIDVal').val()});
     }
 
     function refreshAll() {

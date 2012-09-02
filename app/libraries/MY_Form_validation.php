@@ -26,9 +26,9 @@ class MY_Form_validation extends CI_Form_validation
         $this->set_rules($config);
     }
 
-    public function setRulesForQuizAdd()
+    public function setRulesForQuizAdd($config = array())
     {
-        $config = array(
+        $config = array_merge(array(
             array(
                 'field' => 'Title',
                 'label' => 'Title',
@@ -59,19 +59,26 @@ class MY_Form_validation extends CI_Form_validation
                 'label' => 'Category ID',
                 'rules' => 'required'
             )
-        );
+        ), $config);
 
         $this->set_rules($config);
     }
 
-    public function setRulesForQuestionUpdate()
+    public function setRulesForQuizUpdate()
     {
         $config = array(
             array(
-                'field' => 'QuesID',
-                'label' => 'Ques ID',
+                'field' => 'QuizID',
+                'label' => 'QuizID',
                 'rules' => 'required'
-            ),
+            ));
+
+        $this->setRulesForQuizAdd($config);
+    }
+
+    public function setRulesForQuestionAdd($config = array())
+    {
+        $config = array_merge(array(
             array(
                 'field' => 'Question',
                 'label' => 'Question',
@@ -105,6 +112,19 @@ class MY_Form_validation extends CI_Form_validation
             array(
                 'field' => 'QuizID',
                 'label' => 'Quiz ID',
+                'rules' => 'required'
+            )
+        ), $config);
+
+        $this->set_rules($config);
+    }
+
+    public function setRulesForQuestionUpdate()
+    {
+        $config = array(
+            array(
+                'field' => 'QuesID',
+                'label' => 'Ques ID',
                 'rules' => 'required'
             )
         );

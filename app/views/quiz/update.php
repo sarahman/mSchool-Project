@@ -1,8 +1,8 @@
 <?php
 
-if (!empty($isAdded)) {
+if (!empty($isUpdated)) {
     echo <<<EOF
-        Record Added Successfully.
+        Record Updated Successfully.
         <script language="javascript" type="text/javascript">
             refreshAll();
         </script>
@@ -14,47 +14,49 @@ EOF;
     <link href='<?php echo site_url('assets/css/jquery-ui-1.8.7.custom.css') ?>' rel='stylesheet' type='text/css' />
     <div id="navform">
 
-        <h1><acronym>New Quiz</acronym></h1>
+        <h1><acronym>Update Quiz</acronym></h1>
 
         <p></p>
 
         <div id="message"></div>
 
-        <form method="post" action="<?php echo site_url('quiz/add') ?>" name="contactform" id="DataForm">
+        <form method="post" action="<?php echo site_url('quiz/update') ?>" name="contactform" id="DataForm">
 
     <?php else : echo 'F'; ?>
     <?php endif ?>
 
             <fieldset>
 
-                <legend>Please fill in the details about the quiz:</legend>
+                <legend>Please update the details about the quiz:</legend>
+
+                <input name='QuizID' type='hidden' id='QuizID' value='<?php echo $quiz['QuizID'] ?>' />
 
                 <label for='Title'><span class='required'>*</span>Title</label>
-                <input name='Title' type='text' id='Title' size='30' value='<?php echo set_value('Title') ?>' />
+                <input name='Title' type='text' id='Title' size='30' value='<?php echo set_value('Title', $quiz['Title']) ?>' />
                 <span class='note error'><?php echo form_error('Title') ?></span>
 
                 <label for='Description'><span class='required'>*</span>Description</label>
-                <textarea name="Description" id='Description' cols="3" rows=""><?php echo set_value('Description') ?></textarea>
+                <textarea name="Description" id='Description' cols="3" rows=""><?php echo set_value('Description', $quiz['Description']) ?></textarea>
                 <span class='note error'><?php echo form_error('Description') ?></span>
 
                 <label for='ExpiryDate'><span class='required'>*</span>Expiry Date</label>
-                <input name='ExpiryDate' type='text' id='ExpiryDate' size='30' value='<?php echo set_value('ExpiryDate') ?>' />
+                <input name='ExpiryDate' type='text' id='ExpiryDate' size='30' value='<?php echo set_value('ExpiryDate', $quiz['ExpiryDate']) ?>' />
                 <span class='note error'><?php echo form_error('ExpiryDate') ?></span>
 
                 <label for='ExpiryTime'><span class='required'>*</span>Expiry Time</label>
-                <input name='ExpiryTime' type='text' id='ExpiryTime' size='30' value='<?php echo set_value('ExpiryTime') ?>' />
+                <input name='ExpiryTime' type='text' id='ExpiryTime' size='30' value='<?php echo set_value('ExpiryTime', $quiz['ExpiryTime']) ?>' />
                 <span class='note error'><?php echo form_error('ExpiryTime') ?></span>
 
                 <label for='LecturerID'><span class='required'>*</span>LecturerID</label>
-                <input name='LecturerID' type='text' id='LecturerID' size='30' value='<?php echo set_value('LecturerID') ?>' />
+                <input name='LecturerID' type='text' id='LecturerID' size='30' value='<?php echo set_value('LecturerID', $quiz['LecturerID']) ?>' />
                 <span class='note error'><?php echo form_error('LecturerID') ?></span>
 
                 <label for='CategoryID'><span class='required'>*</span>CategoryID</label>
-                <input name='CategoryID' type='text' id='CategoryID' size='30' value='<?php echo set_value('CategoryID') ?>' />
+                <input name='CategoryID' type='text' id='CategoryID' size='30' value='<?php echo set_value('CategoryID', $quiz['CategoryID']) ?>' />
                 <span class='note error'><?php echo form_error('CategoryID') ?></span>
 
                 <div class='form-buttons'>
-                    <input type='submit' class='submit' id='submit' value='Add' />
+                    <input type='submit' class='submit' id='submit' value='Update' />
                     <input type='button' class='submit' id='pop-out' value='Cancel' />
                 </div>
             </fieldset>

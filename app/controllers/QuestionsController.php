@@ -38,6 +38,33 @@ class QuestionsController extends BaseController
         $this->load->view('questions/view', $this->data);
     }
 
+    public function add()
+    {
+        $this->load->library('form_validation');
+        $this->form_validation->setRulesForQuestionAdd();
+
+        if (!empty($_POST)) {
+            if ($this->form_validation->run()) {
+
+                $this->load->model('quiz');
+                $result = $this->quiz->save($_POST);
+
+                if (empty($result)) {
+                    $this->data['isAdded'] = false;
+                    $this->data['errorMsg'] = 'Something went wrong! Please check again.';
+                } else {
+                    $this->data['isAdded'] = true;
+                }
+
+            } else {
+                $this->data['isAdded'] = false;
+                $this->data['errorMsg'] = 'Check the following errors.';
+            }
+        }
+
+        $this->load->view('questions/add', $this->data);
+    }
+
     public function update()
     {
         $this->load->model('question');
@@ -94,73 +121,5 @@ class QuestionsController extends BaseController
         $quesID = $this->uri->segment(3);
         $this->quiz->delete($quesID);
         echo "<h2>Deleted Successfully</h2>";
-    }
-
-    public function add()
-    {
-        require_once("../init.php");
-        require_once("../lib/Models/Quiz.php");
-
-        if (isset($_GET["q"])) {
-            switch ($_GET["q"])
-            {
-                case "getQuiz":
-                    break;
-
-                case "delete":
-                    $quizID = $_GET['quizID'];
-                    echo "<span style='text-align:center'><br><h2>Are you sure to delete this record?</h2><br><br>";
-                    echo "<a href='javascript:delRec()' style='padding-left:100px'>Yes</a>   <a href='' style='padding-left:100px'>No</a></span>";
-                    break;
-                case "del":
-                    $quizID = $_GET['quizID'];
-                    $quiz = new Quiz();
-                    $quiz = Quiz::find_by_id($quizID);
-                    $quiz->delete();
-                    $db->query("Delete from tblQuestions where QuizID='" . $quizID . "'");
-                    echo "<h2>Deleted Successfully</h2>";
-                    break;
-            }
-            exit;
-
-        }
-        else
-        {
-            if ($_POST) {
-                extract($_POST);
-                $quiz = new Quiz();
-                $quiz->Title = $Title;
-                $quiz->Description = $Description;
-                $quiz->ExpiryDate = to_datetime(strtotime($ExpiryDate));
-                $quiz->ExpiryTime = to_datetime(strtotime($ExpiryTime));
-                $quiz->LecturerID = $LecturerID;
-                $quiz->CategoryID = $CategoryID;
-                $quiz->create();
-                echo "Record Added";
-                exit;
-            }
-            else
-            {
-                ?>
-
-            <script type="text/javascript" src="js/jquery.ui.core.js"></script>
-            <script type="text/javascript" src="js/jquery.ui.timepicker-0.0.6.js"></script>
-            <script type="text/javascript" src="js/jquery.ui.datepicker.js"></script>
-            <link href='css/ui-lightness/jquery-ui-1.8.7.custom.css' rel='stylesheet' type='text/css'/>
-            <script type="text/javascript">
-                $(document).ready(function () {
-                    $('#ExpiryTime').timepicker();
-                    $("#ExpiryDate").datepicker({ dateFormat:'d-m-yy' });
-
-                });
-            </script>
-
-
-            <script src='js/navform.js' type='text/javascript'></script>
-
-
-            <?php
-            }
-        }
     }
 }

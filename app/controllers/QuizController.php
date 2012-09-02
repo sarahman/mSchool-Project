@@ -48,6 +48,49 @@ class QuizController extends BaseController
         $this->load->view('quiz/add', $this->data);
     }
 
+    public function update()
+    {
+        $this->load->model('quiz');
+
+        $this->load->library('form_validation');
+        $this->form_validation->setRulesForQuizUpdate();
+
+        if (!empty ($_POST)) {
+
+            if ($this->form_validation->run()) {
+
+                $result = $this->quiz->modify($_POST);
+
+                if (empty($result)) {
+
+                    $this->data['isUpdated'] = false;
+                    $this->data['errorMsg'] = 'Something went wrong! Please check again.';
+                    $this->data['quiz'] = $_POST;
+
+                } else {
+                    $this->data['isUpdated'] = true;
+                }
+
+            } else {
+                $this->data['isUpdated'] = false;
+                $this->data['errorMsg'] = 'Check the following errors.';
+                $this->data['quiz'] = $_POST;
+            }
+        } else {
+            $data = $this->uri->uri_to_assoc();
+
+            if (empty ($data['id'])) {
+                $this->data['errorMsg'] = 'Check the following errors.';
+            } else {
+                $this->data['quiz'] = $this->quiz->getDetail($data['id']);
+            }
+
+            $this->data['isUpdated'] = false;
+        }
+
+        $this->load->view('quiz/update', $this->data);
+    }
+
     public function confirmDelete()
     {
         echo "<span style='text-align:center'><br><h2>Are you sure to delete this record?</h2><br><br>";
@@ -56,11 +99,18 @@ class QuizController extends BaseController
 
     public function delete()
     {
-        $this->load->model('quiz');
-        $this->load->model('question');
-        $quizID = $this->uri->segment(3);
-        $this->quiz->delete($quizID);
-        $this->question->deleteByQuiz($quizID);
-        echo "<h2>Deleted Successfully</h2>";
+        $data = $this->uri->uri_to_assoc();
+echo '<h2>Quiz data is not found. Please check.</h2>';
+        return;
+        if (empty ($data['id'])) {
+            echo 'Quiz data is not found. Please check.';
+        } else {
+            $this->load->model('quiz');
+            $this->load->model('question');
+
+            $this->quiz->delete($data['id']);
+            $this->question->deleteByQuiz($data['id']);
+            echo "<h2>Deleted Successfully</h2>";
+        }
     }
 }
