@@ -32,33 +32,35 @@ EOF;
                 <input name='QuizID' type='hidden' id='QuizID' value='<?php echo $quiz['QuizID'] ?>' />
 
                 <label for='Title'><span class='required'>*</span>Title</label>
-                <input name='Title' type='text' id='Title' size='30' value='<?php echo set_value('Title', $quiz['Title']) ?>' />
+                <input name='Title' type='text' id='Title' value='<?php echo set_value('Title', $quiz['Title']) ?>' />
                 <span class='note error'><?php echo form_error('Title') ?></span>
 
                 <label for='Description'><span class='required'>*</span>Description</label>
-                <textarea name="Description" id='Description' cols="3" rows=""><?php echo set_value('Description', $quiz['Description']) ?></textarea>
+                <textarea name="Description" id='Description' cols="3"
+                          rows=""><?php echo set_value('Description', $quiz['Description']) ?></textarea>
                 <span class='note error'><?php echo form_error('Description') ?></span>
 
                 <label for='ExpiryDate'><span class='required'>*</span>Expiry Date</label>
-                <input name='ExpiryDate' type='text' id='ExpiryDate' size='30' value='<?php echo set_value('ExpiryDate', $quiz['ExpiryDate']) ?>' />
+                <input name='ExpiryDate' type='text' id='ExpiryDate' value='<?php echo set_value('ExpiryDate', $quiz['ExpiryDate']) ?>' />
                 <span class='note error'><?php echo form_error('ExpiryDate') ?></span>
 
                 <label for='ExpiryTime'><span class='required'>*</span>Expiry Time</label>
-                <input name='ExpiryTime' type='text' id='ExpiryTime' size='30' value='<?php echo set_value('ExpiryTime', $quiz['ExpiryTime']) ?>' />
+                <input name='ExpiryTime' type='text' id='ExpiryTime' value='<?php echo set_value('ExpiryTime', $quiz['ExpiryTime']) ?>' />
                 <span class='note error'><?php echo form_error('ExpiryTime') ?></span>
 
-                <label for='LecturerID'><span class='required'>*</span>LecturerID</label>
-                <input name='LecturerID' type='text' id='LecturerID' size='30' value='<?php echo set_value('LecturerID', $quiz['LecturerID']) ?>' />
+                <label for='LecturerID'><span class='required'>*</span>Lecturer ID</label>
+                <input name='LecturerID' type='text' id='LecturerID' value='<?php echo set_value('LecturerID', $quiz['LecturerID']) ?>' />
                 <span class='note error'><?php echo form_error('LecturerID') ?></span>
 
-                <label for='CategoryID'><span class='required'>*</span>CategoryID</label>
-                <input name='CategoryID' type='text' id='CategoryID' size='30' value='<?php echo set_value('CategoryID', $quiz['CategoryID']) ?>' />
+                <label for='CategoryID'><span class='required'>*</span>Category ID</label>
+                <input name='CategoryID' type='text' id='CategoryID' value='<?php echo set_value('CategoryID', $quiz['CategoryID']) ?>' />
                 <span class='note error'><?php echo form_error('CategoryID') ?></span>
 
                 <div class='form-buttons'>
                     <input type='submit' class='submit' id='submit' value='Update' />
                     <input type='button' class='submit' id='pop-out' value='Cancel' />
                 </div>
+
             </fieldset>
 
     <?php if (empty($errorMsg)) : ?>

@@ -45,11 +45,11 @@ EOF;
                 <input name='ExpiryTime' type='text' id='ExpiryTime' size='30' value='<?php echo set_value('ExpiryTime') ?>' />
                 <span class='note error'><?php echo form_error('ExpiryTime') ?></span>
 
-                <label for='LecturerID'><span class='required'>*</span>LecturerID</label>
+                <label for='LecturerID'><span class='required'>*</span>Lecturer ID</label>
                 <input name='LecturerID' type='text' id='LecturerID' size='30' value='<?php echo set_value('LecturerID') ?>' />
                 <span class='note error'><?php echo form_error('LecturerID') ?></span>
 
-                <label for='CategoryID'><span class='required'>*</span>CategoryID</label>
+                <label for='CategoryID'><span class='required'>*</span>Category ID</label>
                 <input name='CategoryID' type='text' id='CategoryID' size='30' value='<?php echo set_value('CategoryID') ?>' />
                 <span class='note error'><?php echo form_error('CategoryID') ?></span>
 

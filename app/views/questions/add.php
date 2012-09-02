@@ -32,23 +32,23 @@ EOF;
                 <textarea name='Question' id='Question' cols="" rows=""><?php echo set_value('Question') ?></textarea>
                 <span class='note error'><?php echo form_error('Question') ?></span>
 
-                <label for='AnsA'><span class='required'>*</span>AnsA</label>
+                <label for='AnsA'><span class='required'>*</span>Answer A</label>
                 <textarea name='AnsA' id='AnsA' cols="" rows=""><?php echo set_value('AnsA') ?></textarea>
                 <span class='note error'><?php echo form_error('AnsA') ?></span>
 
-                <label for='AnsB'><span class='required'>*</span>AnsB</label>
+                <label for='AnsB'><span class='required'>*</span>Answer B</label>
                 <textarea name='AnsB' id='AnsB' cols="" rows=""><?php echo set_value('AnsB') ?></textarea>
                 <span class='note error'><?php echo form_error('AnsB') ?></span>
 
-                <label for='AnsC'><span class='required'>*</span>AnsC</label>
+                <label for='AnsC'><span class='required'>*</span>Answer C</label>
                 <textarea name='AnsC' id='AnsC' cols="" rows=""><?php echo set_value('AnsC') ?></textarea>
                 <span class='note error'><?php echo form_error('AnsC') ?></span>
 
-                <label for='AnsD'><span class='required'>*</span>AnsD</label>
+                <label for='AnsD'><span class='required'>*</span>Answer D</label>
                 <textarea name='AnsD' id='AnsD' cols="" rows=""><?php echo set_value('AnsD') ?></textarea>
                 <span class='note error'><?php echo form_error('AnsD') ?></span>
 
-                <label for='CorrAns'><span class='required'>*</span>CorrAns</label>
+                <label for='CorrAns'><span class='required'>*</span>Correct Answer</label>
                 <select name="CorrAns" id='CorrAns' size="0">
                     <option value="1" <?php echo set_select('CorrAns', '1') ?>>A</option>
                     <option value="2" <?php echo set_select('CorrAns', '2') ?>>B</option>
@@ -57,11 +57,11 @@ EOF;
                 </select>
                 <span class='note error'><?php echo form_error('CorrAns') ?></span>
 
-                <label for='Explanation'><span class='required'>*</span>Explanation</label>
+                <label for='Explanation'>Explanation</label>
                 <textarea name='Explanation' id='Explanation' cols=""
                           rows=""><?php echo $this->input->post('Explanation') ?></textarea>
 
-                <label for='Image'><span class='required'>*</span>Image</label>
+                <label for='Image'>Image</label>
                 <input name='Image' id='Image' value='<?php echo $this->input->post('Image') ?>' />
 
                 <input name='QuizID' type='hidden' id='QuizID' />
