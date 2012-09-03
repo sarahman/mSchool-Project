@@ -132,6 +132,41 @@ class MY_Form_validation extends CI_Form_validation
         $this->setRulesForQuestionAdd($config);
     }
 
+    public function setRulesForNoteAdd($config = array())
+    {
+        $config = array_merge(array(
+            array(
+                'field' => 'Text',
+                'label' => 'Text',
+                'rules' => 'required'
+            ),
+            array(
+                'field' => 'Title',
+                'label' => 'Title',
+                'rules' => 'required'
+            ),
+            array(
+                'field' => 'StudentID',
+                'label' => 'Student ID',
+                'rules' => 'required'
+            )
+        ), $config);
+
+        $this->set_rules($config);
+    }
+
+    public function setRulesForNoteUpdate()
+    {
+        $config = array(
+            array(
+                'field' => 'NotesID',
+                'label' => 'Note ID',
+                'rules' => 'required'
+            ));
+
+        $this->setRulesForNoteAdd($config);
+    }
+
 
     /* *********************** IMPORTANT *************************
     * This method is overridden to implement the callback methods

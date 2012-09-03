@@ -16,7 +16,6 @@ class BrainTeaserController extends BaseController
 
     public function index()
     {
-        $this->load->model('user');
         $this->data['username'] = $this->session->userdata('name');
         $this->layout->view('brain-teaser/index', $this->data);
     }

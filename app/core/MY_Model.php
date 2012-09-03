@@ -194,7 +194,8 @@ class MY_Model extends CI_Model
 
     public function executeQuery($sql)
     {
-        return $this->db->query($sql);
+        $query = $this->db->query($sql);
+        return ($this->returnArray) ? $query->result_array() : $query->result();
     }
 
     public function getLastQuery()
