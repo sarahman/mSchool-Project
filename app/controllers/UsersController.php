@@ -32,6 +32,7 @@ class UsersController extends BaseController
 
                     $this->session->set_userdata('username', $_POST['username']);
                     $this->session->set_userdata('name', $result['Name']);
+                    $this->session->set_userdata('userId', $result['LectID']);
                     $this->session->set_userdata('userType', ADMIN_TYPE);
                     $this->redirectForSuccess('home', 'You have successfully logged in.');
                 }

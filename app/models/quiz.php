@@ -17,7 +17,7 @@ class Quiz extends My_Model
     {
         $result = $this->find(array($this->primaryKey => $quizId));
         if (!empty($result)) {
-            $dateParts = explode('-', substr($result['ExpiryTime'], 0, strlen('0000-00-00')));
+            $dateParts = explode('-', substr($result['ExpiryDate'], 0, strlen('0000-00-00')));
             $result['ExpiryDate'] = "{$dateParts[2]}-{$dateParts[1]}-{$dateParts[0]}";
             $result['ExpiryTime'] = substr($result['ExpiryTime'], strlen('0000-00-00 '), 5);
         }

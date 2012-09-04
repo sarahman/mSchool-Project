@@ -167,6 +167,66 @@ class MY_Form_validation extends CI_Form_validation
         $this->setRulesForNoteAdd($config);
     }
 
+    public function setRulesForEventAdd($config = array())
+    {
+        $config = array_merge(array(
+            array(
+                'field' => 'Title',
+                'label' => 'Title',
+                'rules' => 'required'
+            ),
+            array(
+                'field' => 'Description',
+                'label' => 'Description',
+                'rules' => 'required'
+            ),
+            array(
+                'field' => 'Location',
+                'label' => 'Location',
+                'rules' => 'required'
+            ),
+            array(
+                'field' => 'StartDateTime',
+                'label' => 'Starting Time',
+                'rules' => 'required'
+            ),
+            array(
+                'field' => 'StartDate',
+                'label' => 'Starting Date',
+                'rules' => 'required'
+            ),
+            array(
+                'field' => 'EndDateTime',
+                'label' => 'Ending Time',
+                'rules' => 'required'
+            ),
+            array(
+                'field' => 'EndDate',
+                'label' => 'Ending Date',
+                'rules' => 'required'
+            ),
+            array(
+                'field' => 'MaxAttendee',
+                'label' => 'Maximum Attendee',
+                'rules' => 'required'
+            )
+        ), $config);
+
+        $this->set_rules($config);
+    }
+
+    public function setRulesForEventUpdate()
+    {
+        $config = array(
+            array(
+                'field' => 'EventID',
+                'label' => 'Event ID',
+                'rules' => 'required'
+            ));
+
+        $this->setRulesForEventAdd($config);
+    }
+
 
     /* *********************** IMPORTANT *************************
     * This method is overridden to implement the callback methods
