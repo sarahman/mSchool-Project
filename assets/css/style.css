@@ -1,6 +1,5 @@
 @charset "utf-8";
 
-
 #container {
     height: auto !important;
     margin: 0 auto;
@@ -8,21 +7,18 @@
     width: 100%;
 }
 
-
-
-.logout
-{
+.logout {
     float: right;
     width: 200px;
     margin-right: 10px;
-       margin-top: 10px;
+    margin-top: 10px;
 }
 
 body {
     background: url("../images/bg_header.jpg") repeat-x scroll center top #232323 ;
 }
 
-html,body{
+html, body {
     color: #D8ECFF;
     font-family: arial,sans-serif;
     font-size: 14px;
@@ -32,8 +28,7 @@ html,body{
     padding: 0;
 }
 
-#header
-{
+#header {
     height:131px;
     width: 963px;
     margin-left: auto;
@@ -62,15 +57,12 @@ html,body{
     z-index: 2;
 }
 
-#leftMain
-{
+#leftMain {
     float:left;
     width:200px;
-
 }
 
-#rightMain
-{
+#rightMain {
     float:right;
     width:790px;
 }
@@ -89,72 +81,79 @@ html,body{
     height: 52px;
     width: 100%;
 }
+
 #detailViewContainer {
     margin-top: 61px;
 }
-
-
 
 h1, h2, h3, h4, h5 {
     color: #585858;
     font-weight: bold;
 }
+
 h1 {
     color: #262626;
     font-size: 36px;
     margin: 0;
     padding: 0;
 }
+
 h2 {
     font-size: 28px;
 }
+
 h3 {
     font-size: 20px;
 }
+
 h4 {
     font-size: 18px;
 }
+
 h5 {
     font-size: 16px;
     margin: 0;
     padding: 0;
 }
+
 form, input, ul, li, p {
     margin: 0;
     padding: 0;
 }
+
 input {
     background: none repeat scroll 0 0 transparent;
     border: medium none;
 }
+
 ul, li {
     list-style: none outside none;
 }
+
 p {
     color: #373737;
     font-size: 12px;
     padding: 5px 0;
 }
+
 a {
     color: #268AB9;
     text-decoration: none;
 }
+
 a:hover {
     text-decoration: underline;
 }
 
-.content-box
-{
+.content-box {
     background: url("../images/content-bottom-bg.jpg") no-repeat scroll center bottom #F3F3F3;
     border: 1px solid #AAAAAA;
     float: left;
-
 }
 
-.but
-{
+.but {
     position:relative;
-    margin-buttom:-60px;
+    margin-bottom: -60px;
     width:100px;
     background:#fff;
     border: 1px solid #ccc;
@@ -163,29 +162,27 @@ a:hover {
     -moz-border-radius:10px;
 }
 
-
-#rightMain .content-box
-{
+#rightMain .content-box {
     width:100%;
     margin-top:20px;
 }
 
-#leftMain .content-box
-{
-        width:100%;
+#leftMain .content-box {
+    width:100%;
     margin-top:20px;
 }
 
-#leftMain .content-box li
-{
+#leftMain .content-box div.listings ul {
+    padding-left: 10px;
+}
+
+#leftMain .content-box li {
     border-bottom: 1px solid #90BADE;
     list-style: none outside none;
     margin: 0;
-
 }
 
-#rightMain .content-box .content-inner
-{
+#rightMain .content-box .content-inner {
     background: url("../images/content-top-bg.jpg") no-repeat scroll center top transparent;
     border: 1px solid #AAAAAA;
     float: left;
@@ -193,13 +190,11 @@ a:hover {
     width: 750px;
 }
 
-#rightMain  #detailItem  .dash-sub-menu
-{
-        margin-right: 29px; /* detail for detail views only */
+#rightMain  #detailItem  .dash-sub-menu {
+    margin-right: 29px; /* detail for detail views only */
 }
 
-#leftMain .content-box ul
-{
+#leftMain .content-box ul {
     border: medium none;
     margin: 0;
     padding: 0;
@@ -210,29 +205,22 @@ a:hover {
     list-style-type: none;
 }
 
-
-
-#BrainTeaser #rightMain #Tools
-{
+#BrainTeaser #rightMain #Tools {
     width:600px;
     height:60px;
     margin-top:20px;
 }
 
-#BrainTeaser #rightMain #QuestionLists
-{
+#BrainTeaser #rightMain #QuestionLists {
 
 }
 
-
-#BrainTeaser #Tools #group
-{
+#BrainTeaser #Tools #group {
     margin-top:23px;
     margin-left:20px;
 }
 
-#BrainTeaser #QuestionLists .content-inner
-{
+#BrainTeaser #QuestionLists .content-inner {
     background: url("../images/content-top-bg.jpg") no-repeat scroll center top transparent;
     border: 1px solid #AAAAAA;
     float: left;
@@ -240,32 +228,25 @@ a:hover {
     width: 750px;
 }
 
-#BrainTeaser #leftMain #QuizList
-{
+#BrainTeaser #leftMain #QuizList {
     width:100%;
     margin-top:20px;
 }
 
-
-.LecturesPage #Files
-{
-    width: 85%;
+.LecturesPage #Files {
     padding: 10px;
+    width: 85%;
+}
+
+.LecturesPage #Files .content {
 
 }
 
-.LecturesPage #Files .content
-{
+.LecturesPage #Preview .content {
 
 }
 
-.LecturesPage #Preview .content
-{
-
-}
-.LecturesPage #Preview
-{
+.LecturesPage #Preview {
     width: 95%;
     padding: 10px;
-
 }

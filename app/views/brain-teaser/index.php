@@ -4,7 +4,7 @@
         <div id="QuizList" class="content-box">
             <ul>
                 <li><h2>Quiz List</h2></li>
-                <div id="QuizListings"></div>
+                <div id="QuizListings" class="listings"></div>
             </ul>
         </div>
     </div>

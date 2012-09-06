@@ -5,7 +5,7 @@
 
                 <ul>
                     <li><h2>Notes List</h2></li>
-                    <div id="NoteListings">
+                    <div id="NoteListings" class="listings">
 
                     </div>
                 </ul>

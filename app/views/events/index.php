@@ -5,7 +5,7 @@
 
                 <ul>
                     <li><h2>Events List</h2></li>
-                    <div id="EventListings">
+                    <div id="EventListings" class="listings">
 
                     </div>
                 </ul>

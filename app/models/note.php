@@ -46,8 +46,8 @@ class Note extends My_Model
         return $this->update($data, $data[$this->primaryKey]);
     }
 
-    public function delete($quizId)
+    public function delete($noteId)
     {
-        return $this->remove($quizId);
+        return $this->remove($noteId);
     }
 }
