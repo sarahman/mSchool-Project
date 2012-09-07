@@ -227,6 +227,91 @@ class MY_Form_validation extends CI_Form_validation
         $this->setRulesForEventAdd($config);
     }
 
+    public function setRulesForStudentAdd($config = array())
+    {
+        $config = array_merge(array(
+            array(
+                'field' => 'Name',
+                'label' => 'Name',
+                'rules' => 'required'
+            ),
+            array(
+                'field' => 'Surname',
+                'label' => 'Surname',
+                'rules' => 'required'
+            ),
+            array(
+                'field' => 'DOB',
+                'label' => 'Date of Birth',
+                'rules' => 'required'
+            ),
+            array(
+                'field' => 'Address',
+                'label' => 'Address',
+                'rules' => 'required'
+            ),
+            array(
+                'field' => 'Email',
+                'label' => 'Email',
+                'rules' => 'required'
+            ),
+            array(
+                'field' => 'HomeTel',
+                'label' => 'Home Telephone No',
+                'rules' => 'required'
+            ),
+            array(
+                'field' => 'Mob',
+                'label' => 'Mobile No',
+                'rules' => 'required'
+            ),
+            array(
+                'field' => 'Username',
+                'label' => 'Username',
+                'rules' => 'required'
+            ),
+            array(
+                'field' => 'Password',
+                'label' => 'Password',
+                'rules' => 'required'
+            ),
+            array(
+                'field' => 'ResponsibleParty',
+                'label' => 'Responsible Party',
+                'rules' => 'required'
+            ),
+            array(
+                'field' => 'Gender',
+                'label' => 'Gender',
+                'rules' => 'required'
+            ),
+            array(
+                'field' => 'Details',
+                'label' => 'Gender',
+                'rules' => 'required'
+            ),
+            array(
+                'field' => 'CourseID',
+                'label' => 'Course ID',
+                'rules' => 'required'
+            )
+        ), $config);
+
+        $this->set_rules($config);
+    }
+
+    public function setRulesForStudentUpdate()
+    {
+        $config = array(
+            array(
+                'field' => 'StudentID',
+                'label' => 'Student ID',
+                'rules' => 'required'
+            ));
+
+        $this->setRulesForStudentAdd($config);
+    }
+
 
     /* *********************** IMPORTANT *************************
     * This method is overridden to implement the callback methods
